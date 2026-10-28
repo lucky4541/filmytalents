@@ -4,7 +4,7 @@
   "private": true,
   "description": "Casting Hub API \u2014 member app + admin panel",
   "engines": {
-    "node": ">=20"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
@@ -46,7 +46,7 @@
     "drizzle-kit": "^0.30.4",
     "supertest": "^7.0.0",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3",
+    "typescript": "~5.7.3",
     "vitest": "^2.1.8"
   }
 }
