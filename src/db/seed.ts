@@ -27,6 +27,6 @@ export async function seed() {
 if (require.main === module) {
   runMigrations()
     .then(seed)
-    .then(() => { console.log(`✅ Seeded. Admin login: ${env.SEED_ADMIN_EMAIL} / ${env.SEED_ADMIN_PASSWORD} — change this password after first login.`); return pool.end(); })
+    .then(() => { console.log(env.NODE_ENV === 'production' ? `✅ Seeded. Admin login: ${env.SEED_ADMIN_EMAIL} (password from SEED_ADMIN_PASSWORD)` : `✅ Seeded. Admin login: ${env.SEED_ADMIN_EMAIL} / ${env.SEED_ADMIN_PASSWORD} — change this password after first login.`); return pool.end(); })
     .catch((e) => { console.error(e); process.exit(1); });
 }
